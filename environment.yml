@@ -40,6 +40,7 @@ dependencies:
 - six=1.10.0=py35_0
 - sqlite=3.13.0=0
 - tk=8.5.18=0
+- tqdm=4.15.0=py35_0
 - wheel=0.29.0=py35_0
 - xz=5.2.3=0
 - zlib=1.2.11=0
@@ -47,3 +48,4 @@ dependencies:
   - django==2.1.5
   - image==1.5.27
   - pillow==5.4.1
+
