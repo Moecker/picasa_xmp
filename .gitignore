@@ -1,0 +1,4 @@
+*.JPG
+*.jpg
+__pycache__/
+images/
