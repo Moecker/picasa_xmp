@@ -8,10 +8,10 @@ source activate picasa_xmp
 # Usage
 Create the database and store into pickle file:
 ```
-python sample.py --image_dir /home/samo/xmp/images --pickle_file all_files.p --number_samples 1000
+python sample.py --image_dir /home/samo/xmp/images --pickle_file faces.p --number_samples 1000
 ```
 
 Browse database from pickle file:
 ```
-python browse.py  --pickle_file all_files.p --plot yes
+python browse.py  --pickle_file faces.p --plot yes --search_name "Adam"
 ```
