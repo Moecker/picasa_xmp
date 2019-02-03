@@ -17,8 +17,13 @@ def main():
     files_with_tags = pickle.load(open(args.pickle_file, "rb"))
     logging.info("Loadad {} file(s) with face tags".format(len(files_with_tags)))
 
-    shall_plot =  True if args.plot == "yes" else False
+    shall_plot = True if args.plot == "yes" else False
     visualize_faces(files_with_tags, shall_plot)
+
+    for file_with_tag in files_with_tags:
+        for tags in file_with_tag.get("faces"):
+            name = tags.get("name")
+            print(name)
 
 
 if __name__ == "__main__":

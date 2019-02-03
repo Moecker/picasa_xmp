@@ -32,6 +32,14 @@ def get_xmp_bag_tag(file):
     return True, xmp_bag
 
 
+def encode(name):
+    name = name.replace('\\xc3\\x9f', 'ẞ')
+    name = name.replace('\\xc3\\xa4', 'ä')
+    name = name.replace('\\xc3\\xb6', 'ö')
+    name = name.replace('\\xc3\\xbc', 'ü')
+    return name
+
+
 def get_face_tags(file_path):
     # making a array to hold tag information
     tags = []
@@ -67,6 +75,9 @@ def get_face_tags(file_path):
             w = li3.get('{http://ns.adobe.com/xmp/sType/Area#}w')
             h = li3.get('{http://ns.adobe.com/xmp/sType/Area#}h')
             # save the information into the tag array
-            tags.append((name,float(x),float(y),float(w),float(h)))
+
+            name = encode(name)
+
+            tags.append((name, float(x), float(y), float(w), float(h)))
 
     return found, tags

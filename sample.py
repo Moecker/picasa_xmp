@@ -55,7 +55,7 @@ def main():
 
     logging.info("Found {} file(s) with face tags".format(len(files_with_tags)))
     pickle.dump(files_with_tags, open(args.pickle_file, "wb"))
-
+    visualize_faces(files_with_tags, False)
 
 if __name__ == "__main__":
     logging.basicConfig(filename='sample.log',level=logging.INFO)
