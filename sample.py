@@ -54,6 +54,8 @@ def main():
             files_with_tags.append({"file":file_path, "faces":faces})
 
     logging.info("Found {} file(s) with face tags".format(len(files_with_tags)))
+
+    logging.info("Saving pickle file...")
     pickle.dump(files_with_tags, open(args.pickle_file, "wb"))
     visualize_faces(files_with_tags, False)
 

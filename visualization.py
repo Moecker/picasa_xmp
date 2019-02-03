@@ -4,6 +4,21 @@ import numpy as np
 import matplotlib.patches as patches
 
 
+def visualize_face(file_path, face):
+    img = mpimg.imread(file_path)
+
+    top = int(face["top"])
+    height = int(face["bottom"]-face["top"])
+    left = int(face["left"])
+    width = int(face["right"]-face["left"])
+    img = img[top:top+height , left:left+width, :]
+
+    fig, axis = plt.subplots(1)
+    imgplot = axis.imshow(img)
+    
+    plt.show()
+
+
 def visualize(file_path, faces):
     img = mpimg.imread(file_path)
     fig, axis = plt.subplots(1)
